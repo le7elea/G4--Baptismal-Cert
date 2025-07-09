@@ -92,10 +92,10 @@
             .sb-sidenav .church-logo .church-name {
                 margin-top: 0;
                 text-align: center;
-                font-size: 12px;
+                font-size: 13px;
                 color: #f9f6f0;
-                font-family: 'Montserrat';
-                font-weight: 700;
+                font-family: 'Poppins';
+               
             }
             .sb-sidenav-menu .nav {
                 margin-top: 18px;
