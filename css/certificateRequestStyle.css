@@ -1,8 +1,9 @@
+/* Changed: Global background and font as per new design */
 body {
-        background: #F2F4F4; /* off-white */
-        font-family: 'Roboto', Arial, sans-serif;
-        color: #6B3F00; /* dark brown for text */
-    }
+    background: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+}
     .sb-topnav.navbar {
         background: #6B3F00 !important;
         color: #B08804 !important;
@@ -18,10 +19,11 @@ body {
     .sb-topnav .navbar-brand:hover {
         color: #C9A227 !important;
     }
+    /* Changed: Sidebar color and font as per new design */
     .sb-sidenav {
-        background: linear-gradient(180deg, #B88A0A 0%, #966504 100%); /* palette gold to medium brown gradient */
-        color: #F2F4F4;
-        font-family: 'Montserrat', Arial, sans-serif;
+        background: #B48A2C !important;
+        color: #FFFFFF;
+        font-family: 'Poppins', sans-serif;
         box-shadow: 2px 0 16px rgba(107,63,0,0.06);
         border-top-right-radius: 24px;
         border-bottom-right-radius: 24px;
@@ -30,7 +32,7 @@ body {
         overflow-y: unset;
         padding-top: 0 !important;
         margin-top: 0 !important;
-        border-right: 2px solid #B88A0A;
+        border-right: 2px solid #000000;
     }
    
     @keyframes fadeInSidebar {
@@ -80,13 +82,14 @@ body {
     .sb-sidenav .church-logo .church-name {
         margin-top: 0;
         text-align: center;
-        font-size: 11px;
+        font-size: 13px;
     }
     .sb-sidenav-menu .nav {
         margin-top: 18px;
     }
+    /* Changed: Sidebar menu (inactive) font as per new design */
     .sb-sidenav .sb-sidenav-menu .nav-link {
-        color: #6B3F00;
+        color: #FFFFFF;
         background: transparent;
         border-radius: 10px;
         margin: 4px 0;
@@ -95,12 +98,15 @@ body {
         font-weight: 700;
         transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
         border-left: 4px solid transparent;
+        font-family: 'Poppins';
     }
+    /* Changed: Sidebar menu (active) color and font as per new design */
     .sb-sidenav .sb-sidenav-menu .nav-link.active {
-        background: linear-gradient(90deg, #A9D8DE 0%, #B88A0A 100%);
-        color: #6B3F00;
+        background: #E6C77C;
+        color: #B48A2C;
         border-left: 4px solid #966504;
         box-shadow: 0 2px 8px rgba(185,136,4,0.08);
+        font-family: 'Poppins';
     }
     .sb-sidenav .sb-sidenav-menu .nav-link:hover {
         background: #F2F4F4;
@@ -108,9 +114,10 @@ body {
         border-left: 4px solid #A9D8DE;
         box-shadow: 0 2px 8px rgba(169,216,222,0.10);
     }
+    /* Changed: Sidebar separator color as per new design */
     .sb-sidenav-menu hr {
         border: none;
-        border-top: 1.5px solid #ede9dc;
+        border-top: 1.5px solid #000000;
         margin: 18px 18px 10px 18px;
     }
     .card-header {
@@ -142,17 +149,21 @@ body {
         box-shadow: 0 2px 12px rgba(107,63,0,0.06);
         font-size: 0.70rem;
     }
+    /* Changed: Table header color and font as per new design */
     #datatablesSimple th {
-        background: #966504;
-        color: #fff;
-        font-family: 'Montserrat', Arial, sans-serif;
+        background: #B4812C;
+        color: #000000;
+        font-family: 'Segoe UI';
+        font-weight: bold;
         font-size: 0.72rem;
         letter-spacing: 1px;
         border-bottom: 2px solid #C9A227;
         padding: 6px 4px;
     }
+    /* Changed: Table text color and font as per new design */
     #datatablesSimple td {
-        color: #6B3F00;
+        color: #000000;
+        font-family: 'Segoe UI';
         font-size: 0.68rem;
         vertical-align: middle;
         padding: 5px 4px;
@@ -163,14 +174,22 @@ body {
     #datatablesSimple tr:nth-child(odd) td {
         background: #fff;
     }
+    #datatablesSimple tr td {
+        background: #FFFFFF;
+    }
+    #datatablesSimple tr {
+        border-color: #B4812C;
+    }
+    /* Changed: Approve button color and font as per new design */
     .btn-success.approve-btn {
-        background: linear-gradient(90deg, #B08804 0%, #8C6502 100%);
+        background: #B48A2C;
         border: none;
-        color: #fff;
+        color: #FFFFFF;
         font-weight: 600;
         border-radius: 6px;
         transition: background 0.3s, color 0.3s;
         box-shadow: 0 2px 8px rgba(185,136,4,0.08);
+        font-family: 'Poppins';
     }
     .btn-success.approve-btn:hover {
         background: #C9A227;
@@ -182,57 +201,127 @@ body {
         min-height: 100vh;
         justify-content: center;
     }
+    /* Changed: Modal content background and font as per new design */
     .modal-content {
-        background: #fff;
+        background: #FFFFFF;
         border-radius: 16px;
         border: 2px solid #C9A227;
+        font-family: 'Roboto';
     }
+    /* Changed: Modal header background and font as per new design */
     .modal-header {
-        background: #B88A0A;
-        color: #fff;
+        background: #B48A2C;
+        color: #FFFFFF;
         border-radius: 16px 16px 0 0;
         border-bottom: none;
+        font-family: Arial;
     }
+    /* Changed: Modal header text font as per new design */
     .modal-title {
-        color: #fff;
-        font-family: 'Montserrat', Arial, sans-serif;
+        color: #FFFFFF;
+        font-family: 'Roboto';
         font-weight: 700;
         letter-spacing: 1px;
     }
+    /* Changed: Modal content text color and font as per new design */
     .modal-body p {
-        color: #2D1B00;
+        color: #3E3E3E;
         font-size: 1.1rem;
-        font-family: 'Roboto', Arial, sans-serif;
+        font-family: 'Roboto';
     }
+    /* Changed: Approve button color and font as per new design */
     .btn-approve {
-        background: #966504;
-        color: #fff;
+        background: #9B6C1F;
+        color: #FFFFFF;
         font-weight: 700;
         border-radius: 6px;
         border: none;
         padding: 8px 22px;
         transition: background 0.2s, color 0.2s;
+        font-family: 'Poppins';
     }
     .btn-approve:hover, .btn-approve:focus {
-        background: #B88A0A;
-        color: #fff;
+        background: #e8a63c;
+        color: #FFFFFF;
     }
     .btn-reject {
-        background: #A9D8DE;
-        color: #6B3F00;
+        background: #E6C77C;
+        color: #B48A2C;
         font-weight: 700;
         border-radius: 6px;
         border: none;
         padding: 8px 22px;
         transition: background 0.2s, color 0.2s;
+        font-family: 'Poppins';
     }
     .btn-reject:hover, .btn-reject:focus {
-        background: #6B3F00;
-        color: #fff;
+        background: #E6C77C;
+        color: #B48A2C;
     }
+    /* Changed: Modal secondary (cancel) button color as per new design */
+    .btn-cancel {
+        background: #E6C77C;
+        color: #B48A2C;
+        font-weight: 700;
+        border-radius: 6px;
+        border: none;
+        padding: 8px 22px;
+        transition: background 0.2s, color 0.2s;
+        font-family: 'Poppins';
+    }
+    .btn-cancel:hover, .btn-cancel:focus {
+        background: #E6C77C;
+        color: #B48A2C;
+    }
+    /* Changed: Add record button color and font as per new design */
+    .btn-add-record {
+        background: #7E6E1F;
+        color: #FFFFFF;
+        font-weight: 700;
+        border-radius: 6px;
+        border: none;
+        padding: 8px 22px;
+        transition: background 0.2s, color 0.2s;
+        font-family: 'Poppins';
+    }
+    /* Changed: Edit button color and font as per new design */
+    .btn-edit {
+        background: #1976D2;
+        color: #FFFFFF;
+        font-weight: 700;
+        border-radius: 6px;
+        border: none;
+        padding: 8px 22px;
+        transition: background 0.2s, color 0.2s;
+        font-family: 'Poppins';
+    }
+    /* Changed: Delete button color and font as per new design */
+    .btn-delete {
+        background: #E53935;
+        color: #FFFFFF;
+        font-weight: 700;
+        border-radius: 6px;
+        border: none;
+        padding: 8px 22px;
+        transition: background 0.2s, color 0.2s;
+        font-family: 'Poppins';
+    }
+    /* Changed: View record button color and font as per new design */
+    .btn-view {
+        background: #8A6D2D;
+        color: #FFFFFF;
+        font-weight: 700;
+        border-radius: 6px;
+        border: none;
+        padding: 8px 22px;
+        transition: background 0.2s, color 0.2s;
+        font-family: 'Poppins';
+    }
+    /* Changed: Footer color and font as per new design */
     footer.bg-light {
-        background: #E5E7E9 !important;
-        color: #6B3F00;
+        background: #FFFFFF !important;
+        color: #000000;
+        font-family: 'Poppins';
     }
     .text-muted {
         color: #8C6502 !important;
@@ -244,10 +333,11 @@ body {
     a:hover {
         color: #C9A227;
     }
+    /* Changed: Logout button color and font as per new design */
     .btn-logout {
-        background: #6B3F00;
-        color: #fff;
-        font-family: 'Montserrat', Arial, sans-serif;
+        background: #FFFFFF !important;
+        color: #B48A2C !important;
+        font-family: 'Poppins';
         font-weight: 700;
         border-radius: 8px;
         letter-spacing: 1px;
@@ -261,8 +351,8 @@ body {
         text-decoration: none;
     }
     .btn-logout:hover, .btn-logout:focus {
-        background: #B88A0A;
-        color: #6B3F00;
+        background: #B88A0A !important;
+        color: #6B3F00 !important;
         text-decoration: none;
     }
     h2 {
@@ -279,6 +369,19 @@ body {
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
-    .sb-sidenav, .sb-sidenav * {
-        font-family: 'Montserrat', Arial, sans-serif !important;
+    /* Global default font */
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    /* Sidebar, menu, buttons, logout, footer */
+    .sb-sidenav, .sb-sidenav *, .sb-sidenav .sb-sidenav-menu .nav-link, .sb-sidenav .sb-sidenav-menu .nav-link.active, .btn-logout, .btn-add-record, .btn-success.approve-btn, .btn-edit, .btn-delete, .btn-view, footer.bg-light {
+        font-family: 'Poppins', sans-serif !important;
+    }
+    /* Table header and text, including datatable */
+    #datatablesSimple th, #datatablesSimple td, .datatable-table th, .datatable-table td {
+        font-family: 'Segoe UI', sans-serif !important;
+    }
+    /* Modal header and content */
+    .modal-header, .modal-title, .modal-content, .modal-body, .modal-body p {
+        font-family: 'Roboto', sans-serif !important;
     }
