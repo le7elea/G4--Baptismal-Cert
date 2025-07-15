@@ -185,3 +185,61 @@
     opacity: 1;
   }
 }
+
+.action-dropdown .dropdown-toggle {
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #ccc;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.action-dropdown .dropdown-menu {
+  min-width: 160px;
+  font-size: 0.95rem;
+}
+.action-dropdown .dropdown-item {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+.status-label {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  background: #eafaf1;
+  color: #28a745;
+}
+.status-label:empty {
+  display: none;
+}
+/* Optional: visually distinct colors for each status */
+.status-label:contains("Pending") {
+  background: #fffbe6;
+  color: #b48a2c;
+}
+.status-label:contains("Ready for Pick Up") {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+.status-label:contains("Approved") {
+  background: #eafaf1;
+  color: #28a745;
+}
+.status-label:contains("Cancelled") {
+  background: #fff0f0;
+  color: #dc3545;
+}
+.status-label:contains("Processing") {
+  background: #f0f5ff;
+  color: #6c63ff;
+}
+.status-label:contains("Released") {
+  background: #f6ffed;
+  color: #52c41a;
+}

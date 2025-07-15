@@ -143,4 +143,109 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   // Also try to initialize immediately
   setupStatusFilter();
+
+  // Modal logic for Approve/Reject from Actions dropdown
+  let actionModalRow = null;
+  const actionApproveModalElement =
+    document.getElementById("actionApproveModal");
+  const actionApproveModal = actionApproveModalElement
+    ? new bootstrap.Modal(actionApproveModalElement)
+    : null;
+  const actionApproveBtn = document.getElementById("actionApproveBtn");
+  const actionRejectBtn = document.getElementById("actionRejectBtn");
+
+  if (datatablesElement) {
+    datatablesElement.addEventListener("click", function (e) {
+      if (e.target && e.target.classList.contains("action-select")) {
+        const newStatus = e.target.getAttribute("data-status");
+        const row = e.target.closest("tr");
+        const statusCell = row ? row.cells[4] : null;
+        const actionBtn = row
+          ? row.querySelector(".action-status-label")
+          : null;
+        // Show modal for these statuses
+        if (
+          ["Processing", "Ready for Pick Up", "Pending", "Released"].includes(
+            newStatus
+          )
+        ) {
+          e.preventDefault();
+          statusChangeModalRow = row;
+          statusChangeModalStatus = newStatus;
+          if (statusChangeModalStatusSpan)
+            statusChangeModalStatusSpan.textContent = newStatus;
+          if (statusChangeModal) statusChangeModal.show();
+          return;
+        }
+        // Existing logic for Approved
+        if (newStatus === "Approved") {
+          e.preventDefault();
+          actionModalRow = row;
+          if (actionApproveModal) actionApproveModal.show();
+          return;
+        }
+        // For Cancelled and others, update immediately
+        if (row && statusCell && actionBtn) {
+          statusCell.innerHTML = `<span class='status-label'>${newStatus}</span>`;
+          actionBtn.textContent = newStatus;
+        }
+      }
+    });
+  }
+
+  if (actionApproveBtn) {
+    actionApproveBtn.addEventListener("click", function () {
+      if (actionApproveModal) actionApproveModal.hide();
+      if (actionModalRow) {
+        const statusCell = actionModalRow.cells[4];
+        const actionBtn = actionModalRow.querySelector(".action-status-label");
+        if (statusCell && actionBtn) {
+          statusCell.innerHTML = `<span class='status-label'>Approved</span>`;
+          actionBtn.textContent = "Approved";
+        }
+      }
+    });
+  }
+  if (actionRejectBtn) {
+    actionRejectBtn.addEventListener("click", function () {
+      if (actionApproveModal) actionApproveModal.hide();
+      if (actionModalRow) {
+        const statusCell = actionModalRow.cells[4];
+        const actionBtn = actionModalRow.querySelector(".action-status-label");
+        if (statusCell && actionBtn) {
+          statusCell.innerHTML = `<span class='status-label'>Cancelled</span>`;
+          actionBtn.textContent = "Cancelled";
+        }
+      }
+    });
+  }
+
+  let statusChangeModalRow = null;
+  let statusChangeModalStatus = null;
+  const statusChangeModalElement = document.getElementById("statusChangeModal");
+  const statusChangeModal = statusChangeModalElement
+    ? new bootstrap.Modal(statusChangeModalElement)
+    : null;
+  const statusChangeModalStatusSpan = document.getElementById(
+    "statusChangeModalStatus"
+  );
+  const statusChangeConfirmBtn = document.getElementById(
+    "statusChangeConfirmBtn"
+  );
+
+  if (statusChangeConfirmBtn) {
+    statusChangeConfirmBtn.addEventListener("click", function () {
+      if (statusChangeModal) statusChangeModal.hide();
+      if (statusChangeModalRow && statusChangeModalStatus) {
+        const statusCell = statusChangeModalRow.cells[4];
+        const actionBtn = statusChangeModalRow.querySelector(
+          ".action-status-label"
+        );
+        if (statusCell && actionBtn) {
+          statusCell.innerHTML = `<span class='status-label'>${statusChangeModalStatus}</span>`;
+          actionBtn.textContent = statusChangeModalStatus;
+        }
+      }
+    });
+  }
 });
