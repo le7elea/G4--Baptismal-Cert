@@ -1,0 +1,287 @@
+
+      :root {
+        --soft-aqua: #a6d9de;
+        --off-white: #f2f4f3;
+        --golden-yellow: #b68600;
+        --bronze: #995f00;
+        --deep-brown: #6c3b00;
+        --light-beige: #f8f1e1;
+        --gold-light: rgba(182, 134, 0, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--deep-brown);
+        background: url("../assets/img/church/church-2.jpg") no-repeat center
+          center fixed;
+        background-size: cover;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(166, 125, 3, 0.2);
+        z-index: 0;
+        pointer-events: none;
+      }
+      body > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1000px;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.479);
+        display: flex;
+        flex-direction: row;
+        min-height: 80vh;
+      }
+
+      .sub-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        min-height: 400px;
+        background: rgba(115, 64, 2, 0.5);
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .sub-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgb(0, 0, 0, 0.2);
+        opacity: 0.4;
+        z-index: -1;
+      }
+
+      .branding-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .branding-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .church-name {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 4vw, 1.8rem);
+        font-weight: 600;
+        text-align: left;
+        /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);*/
+        line-height: 1.2;
+        background: linear-gradient(90deg, #A0D3D9, #F0F2F2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .church-logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border: 2px solid var(--light-beige);
+      }
+
+      
+      .register-form {
+        width: 100%;
+        max-width: 350px;
+        background: none;
+        box-shadow: none;
+      }
+      .register-form p {
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      .register-header {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 3vw, 2.0rem);
+        font-weight: 600;
+        letter-spacing: 0.1ch;
+        color: var(--off-white);
+        margin-bottom: 2.5rem;
+        text-align: center;
+      }
+
+      .input-group {
+        position: relative;
+        margin-bottom: 1.0rem;
+      }
+
+      .input-group i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--off-white);
+        font-size: 1.1rem;
+      }
+ .password-toggle {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--off-white);
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+      .form-input {
+        width: 100%;
+        padding: 15px 15px 15px 45px;
+        border: 1px solid var(--soft-aqua);
+        border-radius: 5px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        background-color: rgba(217, 217, 217, 0.027);
+        color: whitesmoke;
+        transition: all 0.3s ease;
+      }
+
+      .form-input:hover {
+        outline: none;
+        border-color: var(--golden-yellow);
+        background: rgba(78, 76, 76, 0.493);
+        box-shadow: 0 0 0 3px rgba(182, 134, 0, 0.2);
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: var(--golden-yellow);
+        background: rgba(78, 76, 76, 0.493);
+        box-shadow: 0 0 0 3px rgba(182, 134, 0, 0.2);
+      }
+
+      .register-btn {
+        width: 100%;
+        padding: 15px;
+        background-color: var(--golden-yellow);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+      }
+
+      .register-btn:hover {
+        background-color: var(--bronze);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(182, 134, 0, 0.3);
+      }
+
+      .form-links {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+        font-size: 1rem;
+      }
+
+      .form-links a {
+        color: var(--off-white);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+       .form-links a:hover {
+        color: #f4f3ef;
+        text-decoration: none;
+        text-shadow: 0 0 8px #ffe066, 0 0 16px #cfa121;
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          max-width: 500px;
+          min-height: unset;
+          height: auto;
+        }
+
+        .sub-container {
+          padding: 1.5rem;
+        }
+
+        .branding-row {
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 10px;
+        }
+
+        .container {
+          border-radius: 10px;
+        }
+
+        .sub-container {
+          padding: 1rem;
+        }
+
+        .church-name {
+          font-size: 1.6rem;
+        }
+
+        .church-logo {
+          width: 50px;
+          height: 50px;
+        }
+
+        .register-header {
+          margin-bottom: 1.5rem;
+        }
+
+        .form-input {
+          padding: 12px 12px 12px 40px;
+          font-size: 0.9rem;
+        }
+
+        .login-btn {
+          padding: 12px;
+          font-size: 0.9rem;
+        }
+
+        .form-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }

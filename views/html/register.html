@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sacred Space - Church Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style_register.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sub-container">
+        <div class="branding-container">
+          <div class="branding-row">
+            <img src="logo.png" alt="Church Logo" class="church-logo" />
+            <h3 class="church-name">Our Lady of Light Shrine - Loon</h3>
+          </div>
+        </div>
+
+        <div class="register-form">
+          <h2 class="register-header">Create Account</h2>
+          <form>
+            <p>Full Name</p>
+
+            <div class="input-group">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <p>Email Address</p>
+
+            <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                class="form-input"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <p>Password</p>
+
+            <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                class="form-input"
+                id="password"
+                placeholder="Enter your password"
+                required
+              />
+              <span
+                class="fas fa-eye password-toggle"
+                id="togglePassword"
+              ></span>
+            </div>
+            <p>Confirm Password</p>
+
+            <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                class="form-input"
+                id="confirmPassword"
+                placeholder="Confirm your password"
+                required
+              />
+              <span
+                class="fas fa-eye password-toggle"
+                id="toggleConfirmPassword"
+              ></span>
+            </div>
+            <button type="submit" class="register-btn">Register</button>
+            <div class="form-links">
+              <p>Already have an account?</p>
+              <p>
+                <a href="login.html">Login Instead</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+        const toggleConfirmPassword = document.querySelector(
+          "#toggleConfirmPassword"
+        );
+        const confirmPassword = document.querySelector("#confirmPassword");
+
+        togglePassword.addEventListener("click", function () {
+          // Toggle the type attribute
+          const type =
+            password.getAttribute("type") === "password" ? "text" : "password";
+          password.setAttribute("type", type);
+
+          // Toggle the eye icon
+          this.classList.toggle("fa-eye");
+          this.classList.toggle("fa-eye-slash");
+        });
+
+        toggleConfirmPassword.addEventListener("click", function () {
+          // Toggle the type attribute
+          const type =
+            confirmPassword.getAttribute("type") === "password"
+              ? "text"
+              : "password";
+          confirmPassword.setAttribute("type", type);
+
+          // Toggle the eye icon
+          this.classList.toggle("fa-eye");
+          this.classList.toggle("fa-eye-slash");
+        });
+      });
+    </script>
+  </body>
+</html>

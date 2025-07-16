@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sacred Space - Church Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style_login.css" />
+  
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Side - Branding -->
+      <div class="left-side">
+        <div class="branding-container">
+          <div class="branding-row">
+            <img src="logo.png" alt="Church Logo" class="church-logo" />
+            <h3 class="church-name">Our Lady of Light Shrine - Loon</h3>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <p class="sacred-text">Sacred Space</p>
+          <p class="inspiration">
+            "Experience the divine presence in our beautifully maintained
+            church, a testament to our rich heritage."
+          </p>
+        </div>
+
+        <p class="footer-text">
+          © 2025 St. Joseph the Farmer Parish. All Rights Reserved
+        </p>
+      </div>
+
+      <!-- Right Side - Login Form -->
+      <div class="right-side">
+        <div class="login-form">
+          <h2 class="login-header">Login</h2>
+          <form>
+            <p>Email Address</p>
+
+            <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                class="form-input"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <p>Password</p>
+
+            <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                class="form-input"
+                id="password"
+                placeholder="Enter your password"
+                required
+              />
+              <span
+                class="fas fa-eye password-toggle"
+                id="togglePassword"
+              ></span>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <div class="form-links">
+              <a href="reset-password.html">Forgot Password?</a>
+              <a href="register.html">Register Now</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+          // Toggle the type attribute
+          const type =
+            password.getAttribute("type") === "password" ? "text" : "password";
+          password.setAttribute("type", type);
+
+          // Toggle the eye icon
+          this.classList.toggle("fa-eye");
+          this.classList.toggle("fa-eye-slash");
+        });
+      });
+    </script>
+  </body>
+</html>
