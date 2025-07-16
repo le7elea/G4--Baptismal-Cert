@@ -21,6 +21,7 @@
                 <option value="Ready for Pick Up">Ready for Pick Up</option>
                 <option value="Released">Released</option>
                 <option value="Processing">Processing</option>
+                <option value="Rejected">Rejected</option>
               </select>
               <label style="margin-left: 24px; font-weight: 500; cursor: pointer;">
                 <input type="checkbox" id="selectAllRows" style="margin-right: 6px; vertical-align: middle;" />Select All
